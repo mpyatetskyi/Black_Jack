@@ -1,21 +1,26 @@
 version: 2.1
 
-orbs:
-  python: circleci/python@0.2.1
 
 jobs:
-  build-and-test:
-    executor: python/default
+  build:
+    working_directory: ~/project
+    docker:
+      - image: "circeci/python:3.9.1"
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
-      - run:
-          command: ./manage.py test
-          name: Test
+      - run: python3 classes_full.py
+    tests:
+      working_directory: ~/project
+      docker:
+        - image: "circeci/python:3.9.1"
+      steps:
+        - checkout
+        - run: python3 test_deck.py
 
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build
+      - test:
+          requires:
+            - build
