@@ -27,7 +27,7 @@ jobs:
       - image: circleci/python:3.9.1
     steps:
       - checkout
-      - run: print('Hello')
+      - run: 'Hello'
 workflows:
   first:
     jobs:
