@@ -27,8 +27,7 @@ jobs:
       - image: circleci/python:3.9.1
     steps:
       - checkout
-      - run: pytest install
-      - run: pytest
+      - run: print('Hello')
 workflows:
   first:
     jobs:
