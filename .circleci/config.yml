@@ -19,13 +19,20 @@ jobs:
   testing:
     docker:
       - image: circleci/python:3.9.1
-    steps:
-      - checkout
+      steps:
+        - checkout
       - run: echo test_deck.py
+  pytest:
+    docker:
+      - image: circleci/python:3.9.1
+      steps:
+        - checkout
+        - run: echo pytest
 workflows:
   first:
     jobs:
       - one
       - two
       - testing
+      - pytest
 
