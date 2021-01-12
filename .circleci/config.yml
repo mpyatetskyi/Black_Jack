@@ -15,7 +15,7 @@ jobs:
       - image: circleci/python:3.9.1
     steps:
       - checkout
-      - run: echo "i`m a second task"
+      - run: echo "i am a second task"
 
 workflows:
   first:
