@@ -16,10 +16,16 @@ jobs:
     steps:
       - checkout
       - run: echo "i am a second task"
-
+  testing:
+    docker:
+      - image: circleci/python:3.9.1
+    steps:
+      - checkout
+      - run: test_deck.py
 workflows:
   first:
     jobs:
       - one
       - two
+      - testing
 
