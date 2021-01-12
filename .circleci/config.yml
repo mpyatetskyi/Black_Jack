@@ -22,4 +22,6 @@ workflows:
     jobs:
       - one
       - two
+        reqires:
+          - one
 
