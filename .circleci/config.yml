@@ -27,7 +27,19 @@ jobs:
       - image: circleci/python:3.9.1
     steps:
       - checkout
-      - run: 'Hello'
+      - run: echo pytest
+  isort:
+    docker:
+      - image: circleci/python:3.9.1
+    steps:
+      - checkout
+      - run: echo isort **/*.py -c -v
+  flake8:
+    docker:
+      - image: circleci/python:3.9.1
+    steps:
+      - checkout
+      - run: echo flake8
 workflows:
   first:
     jobs:
@@ -35,4 +47,6 @@ workflows:
       - two
       - testing
       - pytest
+      - isort
+      - docker
 
