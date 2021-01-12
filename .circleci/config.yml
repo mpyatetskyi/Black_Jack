@@ -10,9 +10,16 @@ jobs:
     steps:
       - checkout
       - run: echo "Hello World"
+  two:
+    docker:
+      - image: circleci/python:3.9.1
+    steps:
+      - checkout
+      - run: echo "i`m a second task"
 
 workflows:
   first:
     jobs:
       - one
+      - two
 
