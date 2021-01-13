@@ -17,7 +17,10 @@ jobs:
     steps:
       - checkout
       - run: pip install isort
-      - run: echo isort . -c -v
+      - run: echo isort *.py -c -v
+      - run: echo isort **/*.py -c -v
+      - run: echo isort **/**/*.py -c -v
+      - run: echo isort **/**/**/*.py -c -v
 
   flake8:
     docker:
