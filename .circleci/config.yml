@@ -4,24 +4,6 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  one:
-    docker:
-      - image: circleci/python:3.9.1
-    steps:
-      - checkout
-      - run: echo "Hello World"
-  two:
-    docker:
-      - image: circleci/python:3.9.1
-    steps:
-      - checkout
-      - run: echo "i am a second task"
-  testing:
-    docker:
-      - image: circleci/python:3.9.1
-    steps:
-      - checkout
-      - run: echo test_deck.py
   pytest:
     docker:
       - image: circleci/python:3.9.1
@@ -43,9 +25,6 @@ jobs:
 workflows:
   first:
     jobs:
-      - one
-      - two
-      - testing
       - pytest
       - isort
       - flake8
