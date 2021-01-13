@@ -1,4 +1,7 @@
 from random import shuffle
+from src.black_jack.resources.gameFunctions import player_wins
+from src.black_jack.resources.gameFunctions import dealer_busts
+
 
 '''Class Card is made to show the cards from the deck'''
 
@@ -98,7 +101,7 @@ class Game:
             try:
                 chips.bet = int(input("How many chips would"
                                       " you like to bet? "))
-            except:
+            except ValueError:
                 print("Sorry, please insert an integer")
             else:
                 if chips.bet > chips.total:
@@ -133,17 +136,17 @@ class Game:
             print(card)
         print(player.value)
 
-    def player_busts(self, player, dealer, chips):
-        print("Player busts")
-        chips.loose_bet()
-
     def player_wins(self, player, dealer, chips):
         print("Player wins!!!")
         chips.win_bet()
 
+    def player_busts(self, player, dealer, chips):
+        print("Player busts")
+        chips.loose_bet()
+
     def dealer_busts(self, player, dealer, chips):
         print("Dealer busts, Player wins")
-        chips.win_bet
+        chips.win_bet()
 
     def dealer_wins(self, player, dealer, chips):
         print("Dealer wins")
@@ -233,7 +236,7 @@ class Game:
                 print("Thanks for playing!")
                 playing = False
             else:
-                playing = False
+                playing = True
 
 
 if __name__ == '__main__':
