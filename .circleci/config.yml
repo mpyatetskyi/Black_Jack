@@ -18,6 +18,9 @@ jobs:
       - checkout
       - run: pip install isort
       - run: echo isort *.py -c -v
+      - run: echo isort **/*.py -c -v
+      - run: echo isort **/**/*.py -c -v
+      - run: echo isort **/**/**/*.py -c -v
   flake8:
     docker:
       - image: circleci/python:3.9.1
