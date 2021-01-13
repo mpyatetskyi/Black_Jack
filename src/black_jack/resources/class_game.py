@@ -124,9 +124,9 @@ class Game:
                               self.dealer_hand)
 
                 if self.dealer_hand.value > 21:
-                    dealer_busts(self.player_hand,
-                                 self.dealer_hand,
-                                 player_chips)
+                    self.dealer_busts(self.player_hand,
+                                      self.dealer_hand,
+                                      player_chips)
 
                 elif self.dealer_hand.value > self.player_hand.value:
                     self.dealer_wins(self.player_hand,
@@ -134,9 +134,9 @@ class Game:
                                      player_chips)
 
                 elif self.dealer_hand.value < self.player_hand.value:
-                    player_wins(self.player_hand,
-                                self.dealer_hand,
-                                player_chips)
+                    self.player_wins(self.player_hand,
+                                     self.dealer_hand,
+                                     player_chips)
 
                 else:
                     self.tie(self.player_hand,
