@@ -11,4 +11,4 @@ def add_card_init():
     my_deck.deal()
     my_deck.deal()
     my_deck.deal()
-    assert len(my_deck.deck) == 49
+    assert len(my_deck.deck) == 52
