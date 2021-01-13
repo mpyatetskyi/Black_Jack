@@ -1,6 +1,4 @@
 from random import shuffle
-from src.black_jack.resources.gameFunctions import player_wins
-from src.black_jack.resources.gameFunctions import dealer_busts
 
 
 '''Class Card is made to show the cards from the deck'''

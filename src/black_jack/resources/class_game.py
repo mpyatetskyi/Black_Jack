@@ -1,8 +1,6 @@
 from src.black_jack.resources.classes_full import Deck
 from src.black_jack.resources.classes_full import Chips
 from src.black_jack.resources.classes_full import Hand
-from src.black_jack.resources.classes_full import player_wins
-from src.black_jack.resources.classes_full import dealer_busts
 
 
 class Game:
