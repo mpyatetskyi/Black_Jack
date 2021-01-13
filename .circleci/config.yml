@@ -9,7 +9,7 @@ jobs:
       - image: circleci/python:3.9.1
     steps:
       - checkout
-      - run: echo pip install pytest
+      - run: pip install pytest
       - run: echo pytest
   isort:
     docker:
