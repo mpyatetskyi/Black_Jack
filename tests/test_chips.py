@@ -8,7 +8,7 @@ def test_chips_default_init():
 
 def test_chips_total():
     my_chips = Chips(500)
-    assert my_chips.total == 500
+    assert my_chips.total == 501
 
 
 def test_bet_default():
