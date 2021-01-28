@@ -6,7 +6,6 @@ def test_chips_default_init():
     assert my_chips.total == 100
 
 
-
 def test_chips_total():
     my_chips = Chips(500)
     assert my_chips.total == 500
