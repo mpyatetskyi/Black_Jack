@@ -16,11 +16,10 @@ def test_bet_default():
     assert my_chips.bet == 0
 
 
-
 def test_take_a_bet():
     my_chips = Chips()
     my_chips.take_a_bet(50)
-    assert my_chips.bet == 51
+    assert my_chips.bet == 50
 
 
 def test_win_bet():
